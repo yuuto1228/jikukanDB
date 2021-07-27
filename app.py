@@ -1,4 +1,4 @@
-# env
+# -*- coding: utf-8 -*-
 from flask import Flask, jsonify, abort, make_response,render_template,session,request,redirect
 
 
