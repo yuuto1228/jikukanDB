@@ -1,5 +1,5 @@
+scipy==1.4.1
 Flask==2.0.1
 geopy==2.1.0
 pandas==1.0.5
 numpy==1.18.5
-scipy==1.4.1
