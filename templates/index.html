@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+
+    
+  </head>
+  <body>
+    <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            時空間DB最終課題
+          </h1>
+          <h2 class="subtitle is-6">
+            <br>s1922026 野地雄人
+          </h2>
+        </div>
+    </div>
+    </section>
+    <div class="section">
+      <h4 class="title is-4">select location</h4>
+      <form action="/" method="post">
+        <div class="select">
+          <select name="name">
+              {% for location in locations %}
+                  <option value="{{ location }}">{{ location }}</option>
+              {% endfor %}
+          </select>
+        </div>
+        <button class='button is-primary' type="submit" name="send" value = "select_location">select</button>
+      </form>
+    </div>
+    {{result_select_location}}
+    <br><br>
+    {{best_route}}
+    <br>
+    {{now_population|safe}}
+    <br>
+    {{timefeed_message}}
+    {{timefeed|safe}}
+  </body>
+    <script>
+     $(document).ready(function() {
+      $('.toggle').click(function() {
+       var current_status = $('.status').text();
+       $.ajax({
+        url: "/get_toggled_status",
+        type: "get",
+         data: {status: current_status},
+         success: function(response) {
+          $(".status").html(response);
+         },
+         error: function(xhr) {
+          //Do Something to handle error
+         }
+       });
+      });
+    });
+</script>
+
+</html>
