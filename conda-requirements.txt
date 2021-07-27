@@ -1,4 +1,7 @@
-numpy==1.18.1
-scipy==0.14.0
-Flask==2.0.1
-geopy==2.1.0
+scipy
+numpy
+bitarray
+reportlab
+pandas
+Flask
+geopy
